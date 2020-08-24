@@ -15,30 +15,13 @@ import java.util.Map;
 /**
  * Created by LaunchCode
  */
-public abstract class JobData {
+public  class JobData {
 
    private static final String DATA_FILE = "resources/job_data.csv";
    private static Boolean isDataLoaded = false;
 
    private static ArrayList<HashMap<String, String>> allJobs;
 
-//   static {
-//      loadData();
-//   }
-
-//   private static JobData instance;
-//
-//   private JobData() {
-//      loadData();
-//   }
-//
-//   public static JobData getInstance() {
-//      if (instance == null) {
-//         instance = new JobData();
-//      }
-//
-//      return instance;
-//   }
 
    /**
     * Fetch list of all values from loaded data,
