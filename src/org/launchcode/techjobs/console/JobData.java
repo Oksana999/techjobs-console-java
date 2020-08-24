@@ -15,21 +15,39 @@ import java.util.Map;
 /**
  * Created by LaunchCode
  */
-public class JobData {
+public abstract class JobData {
 
    private static final String DATA_FILE = "resources/job_data.csv";
    private static Boolean isDataLoaded = false;
 
    private static ArrayList<HashMap<String, String>> allJobs;
 
-    /**
-     * Fetch list of all values from loaded data,
-     * without duplicates, for a given column.
-     *
-     * @param field The column to retrieve values from
-     * @return List of all of the values of the given field
-     */
-    public static ArrayList<String> findAll(String field) {
+//   static {
+//      loadData();
+//   }
+
+//   private static JobData instance;
+//
+//   private JobData() {
+//      loadData();
+//   }
+//
+//   public static JobData getInstance() {
+//      if (instance == null) {
+//         instance = new JobData();
+//      }
+//
+//      return instance;
+//   }
+
+   /**
+    * Fetch list of all values from loaded data,
+    * without duplicates, for a given column.
+    *
+    * @param field The column to retrieve values from
+    * @return List of all of the values of the given field
+    */
+   public static ArrayList<String> findAll(String field) {
 
       // load data, if not already loaded
       loadData();
@@ -137,7 +155,7 @@ public class JobData {
     * For example, searching for "Enterprise" will include results
     * with "Enterprise Holdings, Inc".
     *
-    * @param value Value of teh field to search for
+    * @param value  Value of teh field to search for
     * @return List of all jobs matching the criteria
     */
    public static ArrayList<HashMap<String, String>> findByValue(String value) {
